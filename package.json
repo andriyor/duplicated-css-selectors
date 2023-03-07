@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -12,12 +12,22 @@
   "dependencies": {
     "css-tree": "^2.3.1",
     "fast-glob": "^3.2.12",
-    "sass": "^1.58.2"
+    "postcss": "^8.4.21",
+    "postcss-scss": "^4.0.6",
+    "sass": "^1.58.2",
+    "set-fns": "^1.0.0"
   },
   "devDependencies": {
     "@types/css-tree": "^2.3.0",
+    "@types/jest": "^29.4.0",
     "@types/node": "^18.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint": "^8.35.0",
+    "eslint-plugin-clean": "git+https://github.com/andriyor/eslint-plugin-clean.git",
+    "jest-environment-node-single-context": "^29.0.0",
     "prettier": "2.8.4",
+    "ts-jest": "^29.0.5",
     "typescript": "^4.9.5"
   }
 }

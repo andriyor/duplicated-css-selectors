@@ -1,0 +1,11 @@
+{
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "clean"],
+  "root": true,
+  "rules": {
+    // TODO: depth
+    "clean/max-if-depth": ["error", 3],
+    "clean/max-loop-depth": ["error", 3]
+  }
+}
