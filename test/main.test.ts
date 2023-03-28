@@ -14,18 +14,18 @@ const itemMock = {
 };
 
 const fileSelectorsMock = [
-  itemMock,
-  {
-    filePath: 'test/mock/nex-item.scss',
-    imports: ['./shared'],
-    selectors: ['.item-button', '.nested .nested2'],
-  },
+  sharedMock,
   {
     filePath: 'test/mock/not-duplicated.scss',
     imports: ['./shared'],
     selectors: ['.new-item'],
   },
-  sharedMock,
+  {
+    filePath: 'test/mock/nex-item.scss',
+    imports: ['./shared'],
+    selectors: ['.item-button', '.nested .nested2'],
+  },
+  itemMock,
 ];
 
 const resultMock = {

@@ -1,5 +1,4 @@
-/** @type {import('ts-jest').JestConfigWithTsJest} */
 module.exports = {
-  preset: 'ts-jest',
+  // https://github.com/sass/dart-sass/issues/1692#issuecomment-1135536368
   testEnvironment: 'jest-environment-node-single-context',
 };

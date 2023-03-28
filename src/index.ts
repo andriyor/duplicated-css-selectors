@@ -1,7 +1,7 @@
 import path from 'path';
 import { readFileSync } from 'fs';
 
-import fg from 'fast-glob';
+import { glob } from "glob";
 import { difference } from 'set-fns';
 
 import { compileCssFile } from './compile-css-file';
@@ -65,6 +65,15 @@ export const resolveScssImport = (importName: string, fromPath: string) => {
       : `${withoutTilda}.scss`;
     return path.join('node_modules', filePath);
   }
+  if (importName.includes('.scss')) {
+    return path.relative(
+      process.cwd(),
+      path.resolve(path.dirname(fromPath), importName)
+    );
+  }
+  if (!importName.includes('./') && importName.includes('/')) {
+    return path.join(`${importName}.scss`);
+  }
   if (!importName.includes('./')) {
     return path.join('styles', `_${importName}.scss`);
   }
@@ -88,7 +97,7 @@ const getFilesSelector = (filePaths: string[]) => {
 };
 
 export const findDuplicatesInDir = async () => {
-  const files = await fg('**/*.scss', { ignore: ['node_modules/**'] });
+  const files = await glob('**/*.scss', { ignore: 'node_modules/**' })
   const fileClasses: FileSelectors[] = [];
   for (const fileName of files) {
     const css = compileCssFile(fileName);
