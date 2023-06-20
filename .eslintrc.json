@@ -1,9 +1,20 @@
 {
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "clean"],
   "root": true,
+  "parserOptions": {
+    "project": true,
+    "tsconfigRootDir": "__dirname"
+  },
   "rules": {
+    "no-undef": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/require-await": "off",
     // TODO: depth
     "clean/max-if-depth": ["error", 3],
     "clean/max-loop-depth": ["error", 3]

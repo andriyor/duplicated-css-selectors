@@ -46,7 +46,7 @@ describe('duplicated-css-selectors', () => {
   });
 
   it('findDuplicates', async () => {
-    expect(await findDuplicates(fileSelectorsMock)).toEqual(resultMock);
+    expect(findDuplicates(fileSelectorsMock)).toEqual(resultMock);
   });
 
   it('resolveImports', () => {
