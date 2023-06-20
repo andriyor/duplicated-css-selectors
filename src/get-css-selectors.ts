@@ -1,4 +1,5 @@
-import cssTree, { Raw, SelectorList } from 'css-tree';
+import * as cssTree from 'css-tree';
+import { Raw, SelectorList } from 'css-tree';
 
 function isRaw(pet: Raw | SelectorList): pet is Raw {
   return (pet as Raw).value !== undefined;

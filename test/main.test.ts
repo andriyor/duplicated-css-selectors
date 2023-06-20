@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { findDuplicates, findDuplicatesInDir, getDuplicates, resolveScssImport } from "../src";
 
 
